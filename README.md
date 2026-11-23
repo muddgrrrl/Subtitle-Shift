@@ -1,6 +1,20 @@
+<p align="center">
+  <img src="readme-banner.png" width="920" alt="Subtitle Shift. Get captions back in sync · −1.250 s · Example subtitle offset.">
+</p>
+
 # Subtitle Shift
 
 Fix captions that are early or late, or turn an existing subtitle file into captions for a short clip.
+
+## At a glance
+
+| Task | How |
+| --- | --- |
+| **Sync a subtitle file** | Use `--offset` to move cues earlier or later. |
+| **Make captions for a clip** | Use `--from` and `--to` to trim and reset timestamps to zero. |
+| **Save the result** | Use `-o` to write a new SRT file, or omit it to print to stdout. |
+
+## Quick start
 
 ```sh
 python3 subtitle_shift.py captions.srt --offset=-1.250 -o synced.srt
