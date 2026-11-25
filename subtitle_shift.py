@@ -3,7 +3,7 @@
 
 import argparse
 from dataclasses import dataclass
-from decimal import Decimal, InvalidOperation
+from decimal import Decimal, DecimalException
 from pathlib import Path
 import re
 import sys
@@ -37,7 +37,7 @@ def seconds(value):
         scaled = Decimal(value) * 1000
         if scaled.is_finite() and abs(scaled) <= 10**12 and scaled == scaled.to_integral_value():
             return int(scaled)
-    except InvalidOperation:
+    except DecimalException:
         pass
     raise argparse.ArgumentTypeError("use seconds with at most three fractional digits")
 
